@@ -1,0 +1,12 @@
+name: Build Sina Shield
+on: [push]
+jobs:
+  android-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build APK
+        uses: ArtemSerebrennkov/buildozer-action@v1
+        with:
+          repository_path: .
+          buildozer_version: master
